@@ -12,7 +12,7 @@
 
 	<!-- LOG PATTERN -->
 	<property name="LOG_PATTERN"
-		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{traceId}] %logger - %msg%n" />
+		value="%d{ISO8601} %5p %c{1}:%L - %m%n" />
 
 	<!-- CONSOLE -->
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
