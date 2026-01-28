@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- LOG DIRECTORY -->
+	<property name="LOG_HOME"
+		value="../logs" />
+
+	<!-- SERVICE NAME -->
+	<springProperty name="SERVICE"
+		source="spring.application.name"
+		defaultValue="gateway" />
+
+	<!-- LOG PATTERN -->
+	<property name="LOG_PATTERN"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{traceId}] %logger - %msg%n" />
+
+	<!-- CONSOLE -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- FILE -->
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/${SERVICE}/application.log</file>
+
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>
+				${LOG_HOME}/${SERVICE}/application-%d{yyyy-MM-dd}.log.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ROOT -->
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+
+	<!-- YOUR PACKAGE -->
+	<logger name="com.rapapp" level="DEBUG" />
+</configuration>
