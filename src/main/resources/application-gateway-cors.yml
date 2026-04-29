@@ -1,0 +1,82 @@
+# SAML/OIDC/auth: browser navigations from IdPs may send Origin: null or non-localhost origins.
+# Use path-specific patterns (longer match wins over /**) so /api stays on explicit dev origins.
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/sso]':
+            # IdP form POSTs may send Origin: null (opaque); literal "null" is a valid CORS origin token in browsers.
+            allowed-origins:
+              - "null"
+            allowed-origin-patterns:
+              - "*"
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - HEAD
+            allowed-headers:
+              - "*"
+            allow-credentials: true
+          '[/sso/**]':
+            allowed-origins:
+              - "null"
+            allowed-origin-patterns:
+              - "*"
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - HEAD
+            allowed-headers:
+              - "*"
+            allow-credentials: true
+          '[/oidc/**]':
+            allowed-origins:
+              - "null"
+            allowed-origin-patterns:
+              - "*"
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - HEAD
+            allowed-headers:
+              - "*"
+            allow-credentials: true
+          '[/auth/**]':
+            allowed-origins:
+              - "null"
+            allowed-origin-patterns:
+              - "*"
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - HEAD
+            allowed-headers:
+              - "*"
+            allow-credentials: true
+          '[/**]':
+            allowed-origins:
+              - http://localhost:3000
+              - http://localhost:5173
+              - http://localhost:8088
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowed-headers:
+              - "*"
+            allow-credentials: true
