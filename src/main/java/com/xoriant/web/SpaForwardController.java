@@ -25,11 +25,11 @@ public class SpaForwardController {
     }
 
     @GetMapping({
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$)[^\\.]*$}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$)[^\\.]*$}/{second:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}/{fifth:[^\\.]*}"
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$)[^\\.]*$}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$)[^\\.]*$}/{second:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}/{fifth:[^\\.]*}"
     })
     public ResponseEntity<Resource> spa() {
         return serveIndexHtml();
