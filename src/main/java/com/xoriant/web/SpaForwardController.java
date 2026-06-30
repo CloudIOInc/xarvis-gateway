@@ -25,11 +25,11 @@ public class SpaForwardController {
     }
 
     @GetMapping({
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$)[^\\.]*$}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$)[^\\.]*$}/{second:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}/{fifth:[^\\.]*}"
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}/{second:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}/{fifth:[^\\.]*}"
     })
     public ResponseEntity<Resource> spa() {
         return serveIndexHtml();
