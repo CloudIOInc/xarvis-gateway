@@ -25,11 +25,11 @@ public class SpaForwardController {
     }
 
     @GetMapping({
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}/{second:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}",
-            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}/{fifth:[^\\.]*}"
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$|connectors$|scheduler$|export$|authentication$)[^\\.]*$}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$|connectors$|scheduler$|export$|authentication$)[^\\.]*$}/{second:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$|connectors$|scheduler$|export$|authentication$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$|connectors$|scheduler$|export$|authentication$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}",
+            "/{first:^(?!api$|sso$|oidc$|auth$|resource3$|admin$|react$|ioExport$|v3$|swagger-ui$|swagger-resources$|hs$|wf$|health$|service$|cache$|ds$|connectors$|scheduler$|export$|authentication$)[^\\.]*$}/{second:[^\\.]*}/{third:[^\\.]*}/{fourth:[^\\.]*}/{fifth:[^\\.]*}"
     })
     public ResponseEntity<Resource> spa() {
         return serveIndexHtml();
